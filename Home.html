@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function validate(id,pass){
+	var aid=aid;
+	var apass=pass;
+	if(aid==""){
+		document.getElemmentId("msg").innerHTML="<font='red'>Enter id</font>";
+		
+	}else if(apass="")
+		{
+		document.getElemmentId("msg").innerHTML="<font='red'>Enter password</font>";
+		}
+	else if(aid=="admin" && apass=="admin"){
+
+		document.getElemmentId("msg").innerHTML="<font='red'>incorrect user id/password</font>";
+		//open("home.html");
+		//close("index.html");
+	}else{
+		
+		open("gallerypage.html");
+	}
+	
+}
+</script>
+</head>
+<body bgcolor="cyan">
+<table border="2">
+<tr><th colspan="2">Admin Login</th></tr>
+<tr><th colspan="2"> </th></tr>
+<tr><td> Enter Admin Id:</td><td><input type="text" name="aid"></td></tr>
+<tr><td> Enter Admin Password:</td><td><input type="password" name="apass"></td></tr>
+<tr><th colspan="2"><input type="button" value="login" onclick="validate(aid.value,apass.value)"></th></tr>
+</table>
+<div id="msg"></div>
+</body>
+</html>

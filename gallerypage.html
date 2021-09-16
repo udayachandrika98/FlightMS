@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="nevigationstyle.css">
+<script>
+function myFunction(imgs) {
+	  // Get the expanded image
+	  var expandImg = document.getElementById("expandedImg");
+	  // Get the image text
+	  var imgText = document.getElementById("imgtext");
+	  // Use the same src in the expanded image as the image being clicked on from the grid
+	  expandImg.src = imgs.src;
+	  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+	  imgText.innerHTML = imgs.alt;
+	  // Show the container element (hidden with CSS)
+}
+</script>
+</head>
+<body>
+<div class="row">
+  <div class="column">
+    <img src="InsideFlight.jpg" alt="InsideAreaPic" onclick="myFunction(this);">
+   
+  </div>
+  <div class="column">
+    <img src="passengers.jpg" alt="Passengers" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="TicketCounter.jpg" alt="TicketCounter" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="WorkingStaff.jpg" alt="WorkingStaff" onclick="myFunction(this);">
+  </div>
+</div>
+
+<!-- The expanding image container -->
+<div class="container">
+  <!-- Close the image -->
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+  <!-- Expanded image -->
+  <img id="expandedImg" style="width:100%">
+
+  <!-- Image text -->
+  <div id="imgtext"></div>
+</div>
+</body>
+</html>
